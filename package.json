@@ -1,19 +1,21 @@
 {
-  "name": "openscad-web-gui",
-  "version": "0.0.1",
-  "description": "Web GUI for Openscad WASM",
+  "name": "@sklarcad/openscad-web-gui-app",
+  "version": "0.1.0",
+  "description": "Web GUI for OpenSCAD WASM",
   "author": "",
   "browser": "src/app.tsx",
   "scripts": {
     "build": "node esbuild.mjs",
     "corsproxy": "scripts/cors-proxy.js",
-    "dev": "CORSPROXY=http://localhost:8888/ node esbuild.mjs --serve --watch --cors-proxy",
+    "dev": "node esbuild.mjs --serve --watch",
     "lint": "eslint . --ext .ts,.tsx",
     "prettier": "prettier . --write",
     "serve": "node esbuild.mjs --serve",
     "test": "jest",
     "test:e2e": "cypress run",
-    "watch": "node esbuild.mjs --watch"
+    "watch": "node esbuild.mjs --watch",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
   },
   "license": "UNLICENSED",
   "devDependencies": {
@@ -49,6 +51,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
-    "three": "^0.163.0"
+    "three": "^0.163.0",
+    "@sklarcad/trpc-module": "0.1.0",
+    "@tanstack/react-query": "^5.17.0"
   }
 }
